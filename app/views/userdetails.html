@@ -17,15 +17,126 @@
 
       <form class="form" action="conflict" method="post">
 
-        <p>Title</p>
-        <p>First Name</p>
-        <p>Surname</p>
-        <p>Work Email Address</p>
-        <p>MoJ Business Group</p>
-        <p>Group Area</p>
-        <p>Line Manager Email Address</p>
+        <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+          {{ govukSelect({
+            id: "usertitle",
+            name: "usertitle",
+            label: {
+              text: "Title"
+            },
+            items: [
+              {
+                value: "mr",
+                text: "Mr",
+                selected: true
+              },
+              {
+                value: "mrs",
+                text: "Mrs"
+              },
+              {
+                value: "miss",
+                text: "Miss"
+              },
+              {
+                value: "doctor",
+                text: "Doctor"
+              }
+            ]
+          }) }}</p>
+        <p>{% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Forename?",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            id: "forename",
+            name: "forename"
+          }) }}</p>
+          <p>{% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Surname?",
+                classes: "govuk-label--l",
+                isPageHeading: true
+              },
+              id: "surname",
+              name: "surname"
+            }) }}</p>
+            <p>{% from "govuk/components/input/macro.njk" import govukInput %}
+
+              {{ govukInput({
+                label: {
+                  text: "Work email address?",
+                  classes: "govuk-label--l",
+                  isPageHeading: true
+                },
+                id: "workemail",
+                name: "workemail"
+              }) }}</p>
+        <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "usertitle",
+            name: "usertitle",
+            label: {
+              text: "MoJ Business Group"
+            },
+            items: [
+              {
+                value: "hmcts",
+                text: "HMCTS",
+                selected: true
+              },
+              {
+                value: "hmpps",
+                text: "HMPPS"
+              },
+              {
+                value: "moj",
+                text: "MoJ"
+              }
+            ]
+          }) }}</p>
+        <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "grouparea",
+            name: "grouparea",
+            label: {
+              text: "Group Area"
+            },
+            items: [
+              {
+                value: "dasi",
+                text: "DASI",
+                selected: true
+              },
+              {
+                value: "softwareengineering",
+                text: "Software Engineering"
+              },
+              {
+                value: "platformops",
+                text: "Platform Operations"
+              }
+            ]
+          }) }}</p>
+        <p>{% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Line manager email address?",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            id: "manageremail",
+            name: "manageremail"
+          }) }}</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
