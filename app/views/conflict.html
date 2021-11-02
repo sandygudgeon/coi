@@ -17,7 +17,30 @@
 
       <form class="form" action="check-your-answers" method="post">
 
-        <p>Q1</p>
+        <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "grouparea",
+            name: "grouparea",
+            label: {
+              text: "Group Area"
+            },
+            items: [
+              {
+                value: "dasi",
+                text: "DASI",
+                selected: true
+              },
+              {
+                value: "softwareengineering",
+                text: "Software Engineering"
+              },
+              {
+                value: "platformops",
+                text: "Platform Operations"
+              }
+            ]
+          }) }}</p>
         <p>Q2</p>
         <p>Q3</p>
         <p>Q4</p>
