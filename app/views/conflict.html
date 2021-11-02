@@ -20,33 +20,90 @@
         <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
 
           {{ govukSelect({
-            id: "grouparea",
-            name: "grouparea",
+            id: "interestsyesno",
+            name: "interestsyesno",
             label: {
-              text: "Group Area"
+              text: "Do you have any outside financial interests or remunerated work, including paid employment, paid advisory work, and paid non-executive work?",
+              classes: "govuk-label--m" 
             },
             items: [
               {
-                value: "dasi",
-                text: "DASI",
+                value: "interestsyes",
+                text: "Yes"
+              },
+              {
+                value: "interestsno",
+                text: "No",
                 selected: true
-              },
-              {
-                value: "softwareengineering",
-                text: "Software Engineering"
-              },
-              {
-                value: "platformops",
-                text: "Platform Operations"
               }
             ]
           }) }}</p>
-        <p>Q2</p>
-        <p>Q3</p>
-        <p>Q4</p>
-        <p>Q5</p>
+          <p>{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+            {{ govukTextarea({
+              label: {
+                text: "If you answered yes, please provide brief details including the level of remuneration ",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              id: "renumdetails",
+              name: "renumdetails"
+            }) }}</p>
+
+          <p>{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+            {{ govukTextarea({
+           
+              label: {
+                text: " Details of any non-financial interests",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              id: "nonfinancials",
+              name: "nonfinancials"
+            }) }}
+        </p>
+          <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+                {{ govukSelect({
+                  id: "allinterests",
+                  name: "allinterests",
+                  label: {
+                    text: "Confirmation that all interests, financial and non-financial, are included in the register of interests",
+                    classes: "govuk-label--m"
+                  },
+                  items: [
+                    {
+                      value: "allyes",
+                      text: "Yes",
+                      selected: true
+                    },
+                    {
+                      value: "allno",
+                      text: "No"
+                    }
+                  ]
+                }) }}</p>
+                <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+                  {{ govukSelect({
+                    id: "discussedwithmanager",
+                    name: "discussedwithmanager",
+                    label: {
+                      text: "Where an interest has been declared I confirm that I have both discussed this with my line manager and completed the declarations of interest form. ",
+                      classes: "govuk-label--m"
+                    },
+                    items: [
+                      {
+                        value: "discussedyes",
+                        text: "Yes",
+                        selected: true
+                      },
+                      {
+                        value: "discussedno",
+                        text: "No"
+                      }
+                    ]
+                  }) }}</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
