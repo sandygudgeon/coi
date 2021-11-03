@@ -23,7 +23,8 @@
             id: "usertitle",
             name: "usertitle",
             label: {
-              text: "Title"
+              text: "Title",
+              classes: "govuk-label--m"
             },
             items: [
               {
@@ -49,9 +50,8 @@
 
           {{ govukInput({
             label: {
-              text: "Forename?",
-              classes: "govuk-label--l",
-              isPageHeading: true
+              text: "Forename",
+              classes: "govuk-label--m"
             },
             id: "forename",
             name: "forename"
@@ -60,8 +60,8 @@
 
             {{ govukInput({
               label: {
-                text: "Surname?",
-                classes: "govuk-label--l",
+                text: "Surname",
+                classes: "govuk-label--m",
                 isPageHeading: true
               },
               id: "surname",
@@ -72,7 +72,7 @@
               {{ govukInput({
                 label: {
                   text: "Work email address?",
-                  classes: "govuk-label--l",
+                  classes: "govuk-label--m",
                   isPageHeading: true
                 },
                 id: "workemail",
@@ -81,10 +81,11 @@
         <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
 
           {{ govukSelect({
-            id: "usertitle",
-            name: "usertitle",
+            id: "usergroup",
+            name: "usergroup",
             label: {
-              text: "MoJ Business Group"
+              text: "MoJ Business Group",
+              classes: "govuk-label--m"
             },
             items: [
               {
@@ -98,7 +99,7 @@
               },
               {
                 value: "moj",
-                text: "MoJ"
+                text: "Ministry of Justice"
               }
             ]
           }) }}</p>
@@ -108,20 +109,21 @@
             id: "grouparea",
             name: "grouparea",
             label: {
-              text: "Group Area"
+              text: "Group Area",
+              classes: "govuk-label--m"
             },
             items: [
               {
-                value: "dasi",
+                value: "DASI",
                 text: "DASI",
                 selected: true
               },
               {
-                value: "softwareengineering",
+                value: "Software Engineering",
                 text: "Software Engineering"
               },
               {
-                value: "platformops",
+                value: "Platform Operations",
                 text: "Platform Operations"
               }
             ]
@@ -131,7 +133,7 @@
           {{ govukInput({
             label: {
               text: "Line manager email address?",
-              classes: "govuk-label--l",
+              classes: "govuk-label--m",
               isPageHeading: true
             },
             id: "manageremail",

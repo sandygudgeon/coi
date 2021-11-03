@@ -22,7 +22,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Mr Sandy Gudgeon
+            {{data['forename'] }} {{data['surname'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="userdetails">
@@ -36,12 +36,12 @@
             Work email address
           </dt>
           <dd class="govuk-summary-list__value">
-            alexander.gudgeon@justice,gov.uk
+            {{data['workemail'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="userdetails">
               Change
-              <span class="govuk-visually-hidden"> date of birth</span>
+              <span class="govuk-visually-hidden"> work email address</span>
             </a>
           </dd>
         </div>
@@ -50,12 +50,12 @@
             MoJ Business Group
           </dt>
           <dd class="govuk-summary-list__value">
-            HMCTS
+            {{data['usergroup'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="userdetails">
               Change
-              <span class="govuk-visually-hidden"> contact information</span>
+              <span class="govuk-visually-hidden"> MoJ Business Group</span>
             </a>
           </dd>
         </div>
@@ -64,12 +64,12 @@
             Group Area
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Digital Architecture, Strategy & Innovation</p>
+            {{data['grouparea'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="userdetails">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> group area</span>
             </a>
           </dd>
         </div>
@@ -78,12 +78,12 @@
             Line Manager Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>jay.bangle@justice.gov.uk</p>
+            {{data['manageremail'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="userdetails">
               Change
-              <span class="govuk-visually-hidden"> contact details</span>
+              <span class="govuk-visually-hidden"> line manager email address</span>
             </a>
           </dd>
         </div>
@@ -94,10 +94,10 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Q1
+            Do you have any outside financial interests or remunerated work, including paid employment, paid advisory work, and paid non-executive work?
           </dt>
           <dd class="govuk-summary-list__value">
-            Q1 Answer
+            {{data['interestsyesno'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="conflict">
@@ -108,10 +108,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Q2
+            If you answered yes, please provide brief details including the level of remuneration
           </dt>
           <dd class="govuk-summary-list__value">
-            Q2 answer
+            {{data['renumdetails'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="conflict">
@@ -122,10 +122,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Q3
+            Details of any non-financial interests
           </dt>
           <dd class="govuk-summary-list__value">
-            Q3 answer
+            {{data['nonfinancials'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="conflict">
@@ -136,10 +136,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Q4
+            Confirmation that all interests, financial and non-financial, are included in the register of interests
           </dt>
           <dd class="govuk-summary-list__value">
-            Q4 answer
+            {{data['allinterests'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="conflict">
@@ -150,10 +150,10 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Q5
+            Where an interest has been declared I confirm that I have both discussed this with my line manager and completed the declarations of interest form
           </dt>
           <dd class="govuk-summary-list__value">
-            Q5 answer
+            {{data['discussedwithmanager'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="conflict">
