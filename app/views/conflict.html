@@ -15,7 +15,7 @@
 
       <h1 class="govuk-heading-xl">Conflict of Interest details</h1>
 
-      <form class="form" action="check-your-answers" method="post">
+      <form class="form" action="conflicty" method="post">
 
         <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
 
@@ -32,83 +32,16 @@
                 text: "Yes"
               },
               {
-                value: "No nothing to declare",
+                value: "Nothing to declare",
                 text: "No",
                 selected: true
               }
             ]
           }) }}</p>
-          <p>{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-            {{ govukTextarea({
-              label: {
-                text: "If you answered yes, please provide brief details including the level of remuneration ",
-                classes: "govuk-label--m",
-                isPageHeading: true
-              },
-              id: "renumdetails",
-              name: "renumdetails"
-            }) }}</p>
-
-          <p>{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-            {{ govukTextarea({
-           
-              label: {
-                text: " Details of any non-financial interests",
-                classes: "govuk-label--m",
-                isPageHeading: true
-              },
-              id: "nonfinancials",
-              name: "nonfinancials"
-            }) }}
-        </p>
-          <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-                {{ govukSelect({
-                  id: "allinterests",
-                  name: "allinterests",
-                  label: {
-                    text: "Confirmation that all interests, financial and non-financial, are included in the register of interests",
-                    classes: "govuk-label--m"
-                  },
-                  items: [
-                    {
-                      value: "Yes, all interests included",
-                      text: "Yes",
-                      selected: true
-                    },
-                    {
-                      value: "No, all interests are not included",
-                      text: "No"
-                    }
-                  ]
-                }) }}</p>
-                <p>{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-                  {{ govukSelect({
-                    id: "discussedwithmanager",
-                    name: "discussedwithmanager",
-                    label: {
-                      text: "Where an interest has been declared I confirm that I have both discussed this with my line manager and completed the declarations of interest form. ",
-                      classes: "govuk-label--m"
-                    },
-                    items: [
-                      {
-                        value: "Yes, discussed with manager",
-                        text: "Yes",
-                        selected: true
-                      },
-                      {
-                        value: "No, not discussed with manager",
-                        text: "No"
-                      }
-                    ]
-                  }) }}</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
     </div>
   </div>
 
